@@ -39,7 +39,7 @@ namespace WeatherApp
                 var lon = postion.Coordinate.Longitude;
 
                 RootObject myWeather = await APIManager.GetWeather(lat, lon);
-                string icon = String.Format("ms-appx:///Assets/Weather/{0}.png", myWeather.weather[0].icon);
+                string icon = String.Format("ms-appx:///Assets/{0}.png", myWeather.weather[0].icon);
 
                 ResultImage.Source = new BitmapImage(new Uri(icon, UriKind.Absolute));
                 TempTextBlock.Text = ((double)myWeather.main.temp).ToString();
